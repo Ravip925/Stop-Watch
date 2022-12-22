@@ -1,12 +1,12 @@
-import React from 'react'
-import Timer from '../components/Timer'
+import React from "react";
+import Timer from "../components/Timer";
 
 const Home = () => {
   return (
     <>
-        <Timer/>
+      <Timer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

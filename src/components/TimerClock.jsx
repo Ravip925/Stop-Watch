@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 45%;
   height: 12vh;
+  overflow: hidden;
   background-color: #3be4d6;
   display: flex;
   justify-content: center;
@@ -41,13 +42,13 @@ const Span = styled.span`
   margin: -10px 20px 0 20px;
 `;
 
-const TimerClock = ({seconds,minutes}) => {
+const TimerClock = ({ seconds, minutes }) => {
   return (
     <Container>
       <Wrapper>
-        <Min>{minutes<10? "0"+minutes: minutes}</Min>
+        <Min>{minutes < 10 ? "0" + minutes : minutes}</Min>
         <Span>:</Span>
-        <Sec>{seconds<10 ? "0"+seconds: seconds}</Sec>
+        <Sec>{seconds < 10 ? "0" + seconds : seconds}</Sec>
       </Wrapper>
     </Container>
   );
