@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 45%;
+  width: 55%;
+  user-select: none;
   height: 12vh;
   overflow: hidden;
   background-color: #3be4d6;
@@ -17,7 +18,7 @@ const Container = styled.div`
     rgba(0, 0, 0, 0.09) 0px 32px 16px 0px;
 `;
 const Wrapper = styled.div`
-  width: 45%;
+  width: 52%;
   height: 12vh;
   display: flex;
   justify-content: space-evenly;
@@ -32,6 +33,7 @@ const Min = styled.h1`
 const Sec = styled.h1`
   font-size: 40px;
   font-weight: 200;
+  margin: 5px;
   color: azure;
   font-family: Arial, Helvetica, sans-serif;
 `;
@@ -41,14 +43,25 @@ const Span = styled.span`
   color: #ff0000;
   margin: -10px 20px 0 20px;
 `;
+const MiliSec = styled.h1`
+  font-size: 40px;
+  font-weight: 200;
+  margin: 5px;
+  color: azure;
+  font-family: Arial, Helvetica, sans-serif;
+`;
 
-const TimerClock = ({ seconds, minutes }) => {
+const TimerClock = ({time}) => {
   return (
     <Container>
       <Wrapper>
-        <Min>{minutes < 10 ? "0" + minutes : minutes}</Min>
+        <Min>{time.m < 10 ? "0" + time.m : time.m}</Min>
         <Span>:</Span>
-        <Sec>{seconds < 10 ? "0" + seconds : seconds}</Sec>
+        <Sec>{time.s < 10 ? "0" + time.s : time.s}</Sec>
+        <Span>:</Span>
+        <MiliSec>
+          {time.ms < 10 ? "0" + time.ms : time.ms}
+        </MiliSec>
       </Wrapper>
     </Container>
   );

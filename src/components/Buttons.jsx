@@ -67,14 +67,18 @@ const ResetButton = styled.button`
   }
 `;
 
-const Buttons = ({ Reset, start, setStart }) => {
+const Buttons = ({ time, start, reset, stop, isStart }) => {
   return (
     <Container>
       <Wrapper>
-        <Start onClick={() => setStart(!start)}>
-          {start ? "Stop" : "Start"}
-        </Start>
-        <ResetButton onClick={Reset}>Reset</ResetButton>
+        {isStart === 0 ? (
+          <Start onClick={start}>
+            {time.s === 0 && time.ms === 0 ? "Start" : "Resume"}
+          </Start>
+        ) : (
+          <Start onClick={stop}>Stop</Start>
+        )}
+        <ResetButton onClick={reset}>Reset</ResetButton>
       </Wrapper>
     </Container>
   );
