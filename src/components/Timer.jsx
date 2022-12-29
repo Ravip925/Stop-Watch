@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 import Buttons from "./Buttons";
 import TimerClock from "./TimerClock";
 
@@ -11,6 +12,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  ${mobile({
+    justifyContent: "space-around",
+  })}
 `;
 const Wrapper = styled.div`
   width: 50%;
@@ -22,6 +26,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  ${mobile({
+    width: "90%",
+    height: "70vh",
+  })}
 `;
 const Heading = styled.h1`
   margin-top: -70px;
@@ -32,6 +40,11 @@ const Heading = styled.h1`
     4px 4px 0 rgb(234, 234, 234), 5px 5px 0 rgb(234, 234, 234),
     6px 6px 5px rgba(56, 56, 56, 0.28), 6px 6px 1px rgba(56, 56, 56, 0.5),
     0px 0px 5px rgba(56, 56, 56, 0.2);
+
+  ${mobile({
+    marginTop: "0",
+    fontSize: "40px",
+  })}
 `;
 
 const Timer = () => {

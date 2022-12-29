@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 60%;
@@ -6,12 +7,19 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${mobile({
+    height: "30vh",
+  })}
 `;
 const Wrapper = styled.div`
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({
+    flexDirection: "column",
+    gap: "30px",
+  })}
 `;
 const Start = styled.button`
   width: 40%;
@@ -39,6 +47,9 @@ const Start = styled.button`
     top: 5px;
     left: 5px;
   }
+  ${mobile({
+    width: "100%",
+  })}
 `;
 const ResetButton = styled.button`
   width: 40%;
@@ -65,6 +76,9 @@ const ResetButton = styled.button`
     top: 5px;
     left: 5px;
   }
+  ${mobile({
+    width: "100%",
+  })}
 `;
 
 const Buttons = ({ time, start, reset, stop, isStart }) => {
